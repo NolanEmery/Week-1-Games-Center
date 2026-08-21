@@ -19,9 +19,6 @@
   <p id="first_p"></p>
   <p>SHOP</p>
   <button onclick="extraLifeFunction()">Extra Life: 25 Pts</button>
-  <button onclick="moreBulletsFunction()">More Bullets: 10 Pts</button>
-  <button onclick="shootFasterFunction()">Shoot Faster: 30 Pts</button>
-  <button onclick="runFasterFunction()">Run Faster: 15 Pts</button>
   </section></main>
   <script>
     let score = 0;
@@ -35,33 +32,6 @@
         extraLife += 1;
       } else {
         alert("You need 25 points");
-      }
-    }
-    function moreBulletsFunction() {
-      if (score >= 10) {
-        alert("You got more bullets!");
-        score = score - 10;
-        document.getElementById("first_p").textContent = parseInt(score.toString(), 10);
-      } else {
-        alert("You need 10 points");
-      }
-    }
-    function shootFasterFunction() {
-      if (score >= 30) {
-        alert("You can shoot faster!");
-        score = score - 30;
-        document.getElementById("first_p").textContent = parseInt(score.toString(), 10);
-      } else {
-        alert("You need 30 points");
-      }
-    }
-    function runFasterFunction() {
-      if (score >= 15) {
-        alert("You can run faster!");
-        score = score - 15;
-        document.getElementById("first_p").textContent = parseInt(score.toString(), 10);
-      } else {
-        alert("You need 15 points");
       }
     }
     const keys=new Set(),pressed=new Set();window.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' ','w','a','s','d'].includes(e.key))e.preventDefault();keys.add(e.key);pressed.add(e.key)});window.addEventListener('keyup',e=>keys.delete(e.key));const rand=(min,max)=>Math.random()*(max-min)+min;const hit=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;function drawText(ctx,msg,x,y,size=18,color='#17202a'){ctx.fillStyle=color;ctx.font='700 '+size+'px Arial';ctx.textAlign='center';ctx.fillText(msg,x,y)}
